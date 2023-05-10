@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if ! [ -x "$(command -v docker)" ]; then
+    podman container kill $(podman container ls | grep geodb | cut -d ' ' -f 1)
+    podman run -p 5432:5432 geodb
+else
+    docker container kill $(docker container ls | grep geodb | cut -d ' ' -f 1)
+    docker run -p 5432:5432 geodb
+fi

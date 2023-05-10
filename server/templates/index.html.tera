@@ -1,0 +1,6 @@
+{% extends "base" %}
+{% block content %}
+    <img width=20% height=20% src="/icon512.png">
+  <br></br>
+  <h2>WELCOME TO THE ADMIN PAGE FOR THE GEOLOCATION APP</h2>
+{% endblock %}

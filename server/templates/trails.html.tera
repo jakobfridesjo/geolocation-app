@@ -1,0 +1,48 @@
+{% extends "base" %} 
+{% block header %} 
+{% endblock %} 
+{% block content %}
+<body>
+    <table border="0" align=center valign=top>
+        <tr valign="top">
+            <td width="70%">
+                <table class="my_table">
+                    <thead>
+                        <th>Id</th>
+                        <th>User Id</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                    </thead>
+                    <tbody>
+                        {% for trail in trails %}
+                        <tr>
+                            <th>{{trail.id}}</th>
+                            <td>{{trail.id_user}}</td>
+                            <td>{{trail.start_time}}</td>
+                            <td>{{trail.end_time}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </td>
+            <td width="30%">
+                <form method="POST" action="/web/del/trail">
+                <fieldset>
+                    <legend>
+                        <h4>REMOVE A TRAIL</h4>
+                    </legend>
+                    <p>
+                        <label>Id:</label>
+                        <input type="number" name="id" />
+                    </p>
+                    <p></p>
+                    <p align=center>
+                        <button>Delete</button>
+                    </p>
+                </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!doctype html>
+
+<title>{% block title %}{% endblock %} Rocket test page </title>
+<body>
+<table class="layout_table" align=center border=thin >
+
+<tr><td align=center colspan=2>
+<header>
+  <h1>🛰️ GEOLOCATION ADMIN INTERFACE</h1>
+</header>
+</td></tr>
+
+<td width=20% height=100% align=center valign=top>
+<nav>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="favicon" href="/favicon.ico" />
+    <h2>
+    <br></br>
+    <a href="/">INDEX<br />🛰️</a>
+    <br></br>
+    <br></br>
+    <a href="/web/users">USERS<br/>🧍</a>
+    <br></br>
+    <br></br>
+    <a href="/web/trails">TRAILS<br/>🗺️</a>
+    <br></br>
+    <br></br>
+    <a href="/web/friends">FRIENDS<br/>🧑‍🤝‍🧑</a>
+    </h2>
+
+</nav>
+</td>
+
+<td  width=80% align=center>
+<section class="content">
+  {% block content %}{% endblock %}
+</section>
+</td>
+
+</table>
+</body>

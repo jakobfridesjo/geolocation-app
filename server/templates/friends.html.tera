@@ -1,0 +1,67 @@
+{% extends "base" %} 
+{% block header %} 
+{% endblock %} 
+{% block content %}
+<body>
+    <table border="0" align=center valign=top>
+        <tr valign="top">
+            <td width="70%">
+                <table class="my_table">
+                    <thead>
+                        <th>User Id</th>
+                        <th>Friend Id</th>
+                    </thead>
+                    <tbody>
+		      {% for user in friends %}
+		      <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.id_friend}}</td>
+		      </tr>
+		      {% endfor %}
+                    </tbody>
+                </table>
+            </td>
+            <td width="30%">
+                <form method="POST" action="/web/add/friend">
+                    <fieldset>
+                        <legend>
+                            <h4>ADD A FRIEND</h4>
+                        </legend>
+                        <p>
+                            <field>User Id:</field>
+                            <input type="number" name="id" />
+                        </p>
+			<p>
+			    <field>Friend Id:</field>
+                            <input type="number" name="id_friend" />
+                        </p>
+                        <p></p>
+                        <p align=center>
+                            <button>Add</button>
+                        </p>
+                    </fieldset>
+                </form>
+                <form method="POST" action="/web/del/friend">
+                <fieldset>
+                    <legend>
+                        <h4>REMOVE A FRIEND</h4>
+                    </legend>
+                    <p>
+                        <label>User Id:</label>
+                        <input type="number" name="id" />
+                    </p>
+		    <p>
+		        <field>Friend Id:</field>
+                        <input type="number" name="id_friend" />
+                    </p>
+                    <p></p>
+                    <p align=center>
+                        <button>Delete</button>
+                    </p>
+                </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+{% endblock %}

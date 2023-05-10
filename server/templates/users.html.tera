@@ -1,0 +1,78 @@
+{% extends "base" %} 
+{% block header %} 
+{% endblock %} 
+{% block content %}
+<body>
+    <table border="0" align=center valign=top>
+        <tr valign=top>
+            <td width="70%">
+                <table class="my_table">
+                    <thead>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Mail</th>
+                        <th>Password Hash</th>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <th>{{user.id}}</th>
+                            <td>{{user.name}}</td>
+                            <td>{{user.age}}</td>
+                            <td>{{user.mail}}</td>
+                            <td>{{user.password}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </td>
+            <td width="30%" align=left valign=top>
+            <aside>
+                <form method="POST" action="/web/add/user">
+                    <fieldset>
+                        <legend>
+                            <h4>ADD A USER</h4>
+                        </legend>
+                        <p>
+                            <field>Name:</field>
+                            <input type="text" name="name" />
+                        </p>
+                        <p>
+                            <field>Age:</field>
+                            <input type="number" min="0" name="age" />
+                        </p>
+                        <p>
+                            <field>Mail:</field>
+                            <input type="text" name="mail" />
+                        </p>
+                        <p>
+                            <field>Password:</field>
+                            <input type="text" name="password" />
+                        </p>
+                        <p></p>
+                        <p align=center>
+                            <button>Add</button>
+                        </p>
+                    </fieldset>
+                </form>
+                <form method="POST" action="/web/del/user">
+                <fieldset>
+                    <legend>
+                        <h4>REMOVE A USER</h4>
+                    </legend>
+                        <p>
+                            <label>Id:</label>
+                            <input type="number" name="id" />
+                        </p>
+                        <p></p>
+                        <p align=center>
+                            <button>Delete</button>
+                        </p>
+                </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+{% endblock %}
